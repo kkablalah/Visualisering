@@ -738,16 +738,27 @@ select.form-control {
 }
 
 /* END PERPLEXITY DESIGN SYSTEM */
-
+```css
 /* ===========================
-   MINIMALIST & PROFESSIONAL CSS
-   WITH PIVOT CHART STYLING
+   DARK MODE - PROFESSIONAL CSS
+   Minimalist Design with High Contrast
    =========================== */
 
-/* Override design system variables for this specific application */
+/* CSS Variables - Updated to use Design System */
 :root {
+    --color-bg-primary: var(--color-background);
+    --color-bg-secondary: var(--color-surface);
+    --color-bg-tertiary: var(--color-charcoal-800);
     --color-accent: var(--color-primary);
-    --color-accent-secondary: var(--color-teal-600);
+    --color-text: var(--color-text);
+    --color-text-secondary: var(--color-text-secondary);
+    --color-border: var(--color-border);
+    --color-success: var(--color-success);
+    --color-warning: var(--color-warning);
+    --color-danger: var(--color-error);
+    --spacing-unit: var(--space-8);
+    --font-primary: var(--font-family-base);
+    --transition: all var(--duration-normal) var(--ease-standard);
 }
 
 /* Reset & Base Styles */
@@ -768,9 +779,9 @@ html {
 }
 
 body {
-    font-family: var(--font-family-base);
+    font-family: var(--font-primary);
     color: var(--color-text);
-    background-color: var(--color-background);
+    background-color: var(--color-bg-primary);
     line-height: var(--line-height-normal);
     overflow-x: hidden;
     margin: 0;
@@ -796,7 +807,7 @@ h1 {
 h2 {
     font-size: clamp(var(--font-size-3xl), 4vw, 3rem);
     font-weight: var(--font-weight-normal);
-    margin-bottom: calc(var(--space-24) * 2);
+    margin-bottom: calc(var(--space-8) * 6);
     letter-spacing: var(--letter-spacing-tight);
     color: var(--color-text);
     line-height: var(--line-height-tight);
@@ -813,7 +824,7 @@ h3 {
 p {
     font-size: var(--font-size-base);
     color: var(--color-text-secondary);
-    line-height: var(--line-height-normal);
+    line-height: 1.8;
     margin: 0 0 var(--space-16) 0;
 }
 
@@ -830,7 +841,7 @@ p {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(135deg, var(--color-surface) 0%, var(--color-background) 100%);
+    background: linear-gradient(135deg, var(--color-bg-secondary) 0%, var(--color-bg-tertiary) 100%);
     text-align: center;
     position: relative;
 }
@@ -844,8 +855,8 @@ p {
 
 /* Stats Section */
 .stats {
-    padding: calc(var(--space-32) * 3) 0;
-    background-color: var(--color-text);
+    padding: calc(var(--space-8) * 12) 0;
+    background-color: var(--color-bg-secondary);
 }
 
 .stat-grid {
@@ -860,18 +871,28 @@ p {
     align-items: center;
     padding: var(--space-32);
     text-align: center;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-base);
+    background-color: var(--color-bg-tertiary);
+    transition: var(--transition);
+    box-shadow: var(--shadow-sm);
+}
+
+.stat-card:hover {
+    border-color: var(--color-accent);
+    box-shadow: 0 0 20px rgba(var(--color-teal-300-rgb, 50, 184, 198), 0.2);
 }
 
 .stat-number {
-    font-size: clamp(var(--font-size-4xl), 6vw, 5rem);
-    font-weight: var(--font-weight-normal);
-    color: var(--color-primary);
+    font-size: clamp(3rem, 6vw, 5rem);
+    font-weight: 200;
+    color: var(--color-accent);
     line-height: var(--line-height-tight);
 }
 
 .stat-label {
-    font-size: var(--font-size-sm);
-    color: var(--color-background);
+    font-size: var(--font-size-xs);
+    color: var(--color-text-secondary);
     text-transform: uppercase;
     letter-spacing: 0.1em;
     margin-top: var(--space-16);
@@ -882,24 +903,24 @@ p {
 .categories,
 .price-analysis,
 .score-comparison {
-    padding: calc(var(--space-32) * 3) 0;
-    background-color: var(--color-background);
+    padding: calc(var(--space-8) * 12) 0;
+    background-color: var(--color-bg-primary);
 }
 
 .categories,
 .price-analysis,
 .score-comparison {
-    background-color: var(--color-surface);
+    background-color: var(--color-bg-secondary);
 }
 
 .chart-wrapper {
-    background-color: var(--color-background);
+    background-color: var(--color-bg-tertiary);
     padding: var(--space-32);
     border-radius: var(--radius-lg);
-    box-shadow: var(--shadow-md);
+    border: 1px solid var(--color-border);
+    box-shadow: var(--shadow-lg);
     margin-bottom: var(--space-32);
     position: relative;
-    border: 1px solid var(--color-card-border);
 }
 
 .chart-wrapper canvas {
@@ -919,22 +940,27 @@ p {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: var(--space-24);
-    margin-bottom: calc(var(--space-24) * 2);
+    margin-bottom: calc(var(--space-8) * 6);
 }
 
 .price-stat {
-    background-color: var(--color-background);
+    background-color: var(--color-bg-tertiary);
     padding: var(--space-24);
-    border-left: 4px solid var(--color-primary);
+    border-left: 4px solid var(--color-accent);
     text-align: center;
-    border-radius: var(--radius-sm);
-    box-shadow: var(--shadow-sm);
-    border: 1px solid var(--color-card-border);
+    border-radius: var(--radius-base);
+    border: 1px solid var(--color-border);
+    transition: var(--transition);
+}
+
+.price-stat:hover {
+    box-shadow: 0 4px 15px rgba(var(--color-teal-300-rgb, 50, 184, 198), 0.15);
+    transform: translateY(-2px);
 }
 
 .price-label {
     display: block;
-    font-size: var(--font-size-sm);
+    font-size: var(--font-size-xs);
     color: var(--color-text-secondary);
     text-transform: uppercase;
     letter-spacing: 0.05em;
@@ -945,13 +971,13 @@ p {
     display: block;
     font-size: var(--font-size-3xl);
     font-weight: var(--font-weight-normal);
-    color: var(--color-primary);
+    color: var(--color-accent);
 }
 
 /* Top Bakeries Section */
 .top-bakeries {
-    padding: calc(var(--space-32) * 3) 0;
-    background-color: var(--color-background);
+    padding: calc(var(--space-8) * 12) 0;
+    background-color: var(--color-bg-primary);
 }
 
 .bakery-grid {
@@ -961,14 +987,14 @@ p {
 }
 
 .bakery-card {
-    background-color: var(--color-surface);
+    background-color: var(--color-bg-tertiary);
     padding: var(--space-32);
-    border: 1px solid var(--color-card-border);
-    border-radius: var(--radius-md);
-    transition: all var(--duration-normal) var(--ease-standard);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    transition: var(--transition);
     position: relative;
     overflow: hidden;
-    box-shadow: var(--shadow-sm);
+    box-shadow: var(--shadow-md);
     animation: fadeInUp 0.6s ease forwards;
     opacity: 0;
 }
@@ -991,10 +1017,10 @@ p {
     left: 0;
     width: 100%;
     height: 4px;
-    background: var(--color-primary);
+    background: linear-gradient(90deg, var(--color-accent), transparent);
     transform: scaleX(0);
     transform-origin: left;
-    transition: all var(--duration-normal) var(--ease-standard);
+    transition: var(--transition);
 }
 
 .bakery-card:hover::before {
@@ -1002,13 +1028,14 @@ p {
 }
 
 .bakery-card:hover {
-    box-shadow: var(--shadow-lg);
+    box-shadow: 0 12px 40px rgba(var(--color-teal-300-rgb, 50, 184, 198), 0.25);
     transform: translateY(-8px);
+    border-color: var(--color-accent);
 }
 
 .bakery-rank {
     font-size: var(--font-size-xs);
-    color: var(--color-primary);
+    color: var(--color-accent);
     text-transform: uppercase;
     letter-spacing: 0.1em;
     font-weight: var(--font-weight-semibold);
@@ -1029,9 +1056,9 @@ p {
 }
 
 .bakery-score {
-    font-size: var(--font-size-4xl);
-    font-weight: var(--font-weight-normal);
-    color: var(--color-primary);
+    font-size: 3rem;
+    font-weight: 200;
+    color: var(--color-accent);
     margin: var(--space-16) 0;
     line-height: var(--line-height-tight);
 }
@@ -1039,7 +1066,7 @@ p {
 .bakery-details {
     margin-top: var(--space-24);
     padding-top: var(--space-16);
-    border-top: 1px solid var(--color-card-border-inner);
+    border-top: 1px solid var(--color-border);
 }
 
 .detail {
@@ -1060,23 +1087,27 @@ p {
 
 /* Design Explanation Section */
 .design-explanation {
-    padding: calc(var(--space-32) * 3) 0;
-    background-color: var(--color-background);
+    padding: calc(var(--space-8) * 12) 0;
+    background-color: var(--color-bg-primary);
 }
 
 .principle-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: calc(var(--space-20) * 2);
+    gap: calc(var(--space-8) * 5);
 }
 
 .principle-card {
     padding: var(--space-32);
-    border-left: 3px solid var(--color-primary);
-    background-color: var(--color-surface);
-    border-radius: var(--radius-sm);
-    box-shadow: var(--shadow-sm);
-    border: 1px solid var(--color-card-border);
+    border-left: 3px solid var(--color-accent);
+    background-color: var(--color-bg-tertiary);
+    border-radius: var(--radius-base);
+    border: 1px solid var(--color-border);
+    transition: var(--transition);
+}
+
+.principle-card:hover {
+    box-shadow: 0 6px 20px rgba(var(--color-teal-300-rgb, 50, 184, 198), 0.15);
 }
 
 .principle-card h3 {
@@ -1086,25 +1117,43 @@ p {
 
 .principle-card p {
     font-size: var(--font-size-sm);
-    color: var(--color-text-secondary);
 }
 
 /* Footer */
 footer {
-    padding: calc(var(--space-24) * 2) 0;
-    background-color: var(--color-text);
+    padding: calc(var(--space-8) * 6) 0;
+    background-color: var(--color-bg-secondary);
     text-align: center;
+    border-top: 1px solid var(--color-border);
 }
 
 footer p {
-    color: var(--color-background);
+    color: var(--color-text-secondary);
     font-size: var(--font-size-sm);
     letter-spacing: 0.05em;
 }
 
 /* Chart.js Custom Styling */
 canvas {
-    font-family: var(--font-family-base) !important;
+    font-family: var(--font-primary) !important;
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--color-bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--color-border);
+    border-radius: var(--radius-sm);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--color-accent);
 }
 
 /* Responsive Design */
@@ -1115,10 +1164,6 @@ canvas {
     
     .radar-wrapper canvas {
         max-height: 400px;
-    }
-    
-    .container {
-        padding: 0 var(--space-20);
     }
 }
 
@@ -1145,48 +1190,28 @@ canvas {
     .container {
         padding: 0 var(--space-16);
     }
-    
-    h2 {
-        margin-bottom: var(--space-24);
-    }
 }
 
 @media (max-width: 480px) {
     h1 {
-        font-size: var(--font-size-4xl);
+        font-size: 2.5rem;
     }
     
     h2 {
         font-size: var(--font-size-2xl);
-        margin-bottom: var(--space-20);
+        margin-bottom: var(--space-32);
     }
     
     .container {
         padding: 0 var(--space-16);
     }
     
-    .chart-wrapper {
-        padding: var(--space-16);
-    }
-    
     .chart-wrapper canvas {
         max-height: 280px;
     }
     
-    .bakery-card {
-        padding: var(--space-20);
-    }
-    
-    .price-stat {
-        padding: var(--space-16);
-    }
-    
-    .principle-card {
-        padding: var(--space-20);
-    }
-    
     .stats {
-        padding: calc(var(--space-32) * 2) 0;
+        padding: calc(var(--space-8) * 8) 0;
     }
     
     .top-cities,
@@ -1195,10 +1220,26 @@ canvas {
     .score-comparison,
     .top-bakeries,
     .design-explanation {
-        padding: calc(var(--space-32) * 2) 0;
+        padding: calc(var(--space-8) * 8) 0;
     }
     
     .stat-card {
+        padding: var(--space-20);
+    }
+    
+    .price-stat {
+        padding: var(--space-16);
+    }
+    
+    .bakery-card {
+        padding: var(--space-20);
+    }
+    
+    .chart-wrapper {
+        padding: var(--space-16);
+    }
+    
+    .principle-card {
         padding: var(--space-20);
     }
     
@@ -1206,21 +1247,22 @@ canvas {
         gap: var(--space-20);
     }
     
-    .price-stats-grid {
-        gap: var(--space-16);
-    }
-    
-    .principle-grid {
+    .stat-grid {
         gap: var(--space-20);
     }
     
-    .subtitle {
-        margin-top: var(--space-16);
+    .price-stats-grid {
+        gap: var(--space-16);
     }
 }
 
 /* Print Styles */
 @media print {
+    body {
+        background-color: var(--color-white);
+        color: var(--color-black);
+    }
+    
     .hero,
     footer {
         display: none;
@@ -1230,3 +1272,4 @@ canvas {
         page-break-inside: avoid;
     }
 }
+```

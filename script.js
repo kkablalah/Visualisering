@@ -1,7 +1,7 @@
 // ========================================
 // PIVOT CHARTS & ADVANCED VISUALIZATIONS
+// DARK MODE VERSION - High Contrast Text
 // With Chart.js for professional data analysis
-// UPDATED: City labels changed to white/hvid
 // ========================================
 
 // Global chart objects
@@ -51,7 +51,7 @@ function updatePriceStats() {
 // ========================================
 // CHART 1: CITIES BAR CHART
 // Preattentive attribute: Bar length & color saturation
-// CITY LABELS NOW IN WHITE/HVID
+// DARK MODE - Clear bright text
 // ========================================
 function initCitiesBarChart() {
     const ctx = document.getElementById('citiesChart').getContext('2d');
@@ -64,7 +64,6 @@ function initCitiesBarChart() {
     // Color gradient based on score performance
     const colors = scores.map(score => {
         const ratio = score / maxScore;
-        // Gradient from cool to warm: blue → gold
         if (ratio > 0.9) return '#d4a574'; // Gold accent
         if (ratio > 0.7) return '#c9915c';
         if (ratio > 0.5) return '#9d7c5c';
@@ -79,11 +78,11 @@ function initCitiesBarChart() {
                 label: 'Gennemsnitlig BMO Score',
                 data: scores,
                 backgroundColor: colors,
-                borderColor: '#1a1a1a',
-                borderWidth: 1,
-                borderRadius: 4,
+                borderColor: '#d4a574',
+                borderWidth: 1.5,
+                borderRadius: 6,
                 hoverBackgroundColor: '#d4a574',
-                hoverBorderColor: '#1a1a1a',
+                hoverBorderColor: '#ffffff',
                 hoverBorderWidth: 2
             }]
         },
@@ -95,16 +94,20 @@ function initCitiesBarChart() {
                 legend: {
                     display: true,
                     labels: {
-                        font: { size: 12, family: 'Helvetica Neue' },
-                        color: '#ffffff', // CHANGED TO WHITE
+                        font: { size: 13, family: 'Helvetica Neue', weight: 'bold' },
+                        color: '#ffffff', // Bright white for legend
                         padding: 20
                     }
                 },
                 tooltip: {
-                    backgroundColor: 'rgba(26, 26, 26, 0.9)',
+                    backgroundColor: 'rgba(13, 17, 23, 0.95)',
+                    borderColor: '#d4a574',
+                    borderWidth: 1,
                     padding: 12,
-                    titleFont: { size: 13 },
-                    bodyFont: { size: 12 },
+                    titleFont: { size: 14, weight: 'bold' },
+                    bodyFont: { size: 13 },
+                    titleColor: '#d4a574',
+                    bodyColor: '#e6edf3',
                     callbacks: {
                         label: function(context) {
                             return 'Score: ' + context.parsed.y.toFixed(1);
@@ -117,17 +120,17 @@ function initCitiesBarChart() {
                     beginAtZero: true,
                     max: 6,
                     ticks: {
-                        color: '#ffffff', // CHANGED TO WHITE
-                        font: { size: 11 }
+                        color: '#e6edf3', // Bright text
+                        font: { size: 12, weight: 'bold' }
                     },
                     grid: {
-                        color: 'rgba(255, 255, 255, 0.2)', // Lighter grid for white
+                        color: 'rgba(212, 165, 116, 0.15)',
                         drawBorder: false
                     }
                 },
                 x: {
                     ticks: {
-                        color: '#ffffff', // CHANGED TO WHITE - City names now white
+                        color: '#e6edf3', // Bright text for city names
                         font: { size: 12, weight: 'bold' }
                     },
                     grid: {
@@ -157,14 +160,14 @@ function initCategoryRadarChart() {
                 label: 'Gennemsnitlig Kvalitet',
                 data: scores,
                 borderColor: '#d4a574',
-                backgroundColor: 'rgba(212, 165, 116, 0.15)',
+                backgroundColor: 'rgba(212, 165, 116, 0.2)',
                 borderWidth: 2.5,
-                pointRadius: 5,
+                pointRadius: 6,
                 pointBackgroundColor: '#d4a574',
-                pointBorderColor: '#1a1a1a',
+                pointBorderColor: '#ffffff',
                 pointBorderWidth: 2,
-                pointHoverRadius: 7,
-                pointHoverBackgroundColor: '#1a1a1a',
+                pointHoverRadius: 8,
+                pointHoverBackgroundColor: '#ffffff',
                 pointHoverBorderColor: '#d4a574'
             }]
         },
@@ -175,13 +178,17 @@ function initCategoryRadarChart() {
                 legend: {
                     display: true,
                     labels: {
-                        font: { size: 12 },
-                        color: '#2c2c2c'
+                        font: { size: 13, weight: 'bold' },
+                        color: '#ffffff'
                     }
                 },
                 tooltip: {
-                    backgroundColor: 'rgba(26, 26, 26, 0.9)',
+                    backgroundColor: 'rgba(13, 17, 23, 0.95)',
+                    borderColor: '#d4a574',
+                    borderWidth: 1,
                     padding: 12,
+                    titleColor: '#d4a574',
+                    bodyColor: '#e6edf3',
                     callbacks: {
                         label: function(context) {
                             return 'Score: ' + context.parsed.r.toFixed(2) + ' / 6.0';
@@ -194,11 +201,11 @@ function initCategoryRadarChart() {
                     beginAtZero: true,
                     max: 6,
                     ticks: {
-                        color: '#6c6c6c',
-                        font: { size: 10 }
+                        color: '#e6edf3', // Bright text
+                        font: { size: 11, weight: 'bold' }
                     },
                     grid: {
-                        color: 'rgba(224, 224, 224, 0.4)',
+                        color: 'rgba(212, 165, 116, 0.2)',
                         drawBorder: true,
                         borderColor: '#d4a574'
                     }
@@ -211,7 +218,7 @@ function initCategoryRadarChart() {
 // ========================================
 // CHART 3: PRICE DISTRIBUTION LINE CHART
 // Preattentive attribute: Line height & color intensity
-// CITY LABELS NOW IN WHITE/HVID
+// DARK MODE - Clear bright text
 // ========================================
 function initPriceDistributionChart() {
     const ctx = document.getElementById('priceChart').getContext('2d');
@@ -235,16 +242,16 @@ function initPriceDistributionChart() {
                 label: 'Gennemsnitlig Pris (kr.)',
                 data: prices,
                 borderColor: '#d4a574',
-                backgroundColor: 'rgba(212, 165, 116, 0.1)',
+                backgroundColor: 'rgba(212, 165, 116, 0.15)',
                 borderWidth: 3,
                 fill: true,
                 tension: 0.4,
-                pointRadius: 6,
+                pointRadius: 7,
                 pointBackgroundColor: colors,
-                pointBorderColor: '#1a1a1a',
-                pointBorderWidth: 2,
-                pointHoverRadius: 8,
-                pointHoverBackgroundColor: '#1a1a1a'
+                pointBorderColor: '#ffffff',
+                pointBorderWidth: 2.5,
+                pointHoverRadius: 9,
+                pointHoverBackgroundColor: '#ffffff'
             }]
         },
         options: {
@@ -254,13 +261,17 @@ function initPriceDistributionChart() {
                 legend: {
                     display: true,
                     labels: {
-                        font: { size: 12 },
-                        color: '#2c2c2c'
+                        font: { size: 13, weight: 'bold' },
+                        color: '#ffffff'
                     }
                 },
                 tooltip: {
-                    backgroundColor: 'rgba(26, 26, 26, 0.9)',
+                    backgroundColor: 'rgba(13, 17, 23, 0.95)',
+                    borderColor: '#d4a574',
+                    borderWidth: 1,
                     padding: 12,
+                    titleColor: '#d4a574',
+                    bodyColor: '#e6edf3',
                     callbacks: {
                         label: function(context) {
                             return 'Pris: ' + context.parsed.y.toFixed(1) + ' kr.';
@@ -272,17 +283,17 @@ function initPriceDistributionChart() {
                 y: {
                     beginAtZero: true,
                     ticks: {
-                        color: '#6c6c6c',
-                        font: { size: 11 }
+                        color: '#e6edf3', // Bright text
+                        font: { size: 12, weight: 'bold' }
                     },
                     grid: {
-                        color: 'rgba(224, 224, 224, 0.3)',
+                        color: 'rgba(212, 165, 116, 0.15)',
                         drawBorder: false
                     }
                 },
                 x: {
                     ticks: {
-                        color: '#ffffff', // CHANGED TO WHITE - City names now white
+                        color: '#e6edf3', // Bright text for city names
                         font: { size: 12, weight: 'bold' }
                     },
                     grid: {
@@ -297,18 +308,14 @@ function initPriceDistributionChart() {
 // ========================================
 // CHART 4: BUBBLE CHART - Score vs Price
 // Preattentive attribute: Bubble position, size & color
+// DARK MODE - Clear bright text
 // ========================================
 function initBubbleChart() {
     const ctx = document.getElementById('bubbleChart').getContext('2d');
     
     // Prepare bubble data
     const bubbleDatasets = [];
-    const cityColors = {};
     const colors = ['#d4a574', '#c9915c', '#9d7c5c', '#6c6c6c', '#e74c3c', '#f39c12', '#3498db', '#2ecc71'];
-    
-    chartData.cities.forEach((city, index) => {
-        cityColors[city.By] = colors[index % colors.length];
-    });
     
     chartData.cities.forEach((city, index) => {
         bubbleDatasets.push({
@@ -316,9 +323,9 @@ function initBubbleChart() {
             data: [{
                 x: city.Pris,
                 y: city.Score,
-                r: Math.sqrt(city.Antal) * 8 // Bubble size based on count
+                r: Math.sqrt(city.Antal) * 8
             }],
-            backgroundColor: colors[index % colors.length] + '80',
+            backgroundColor: colors[index % colors.length] + 'b3',
             borderColor: colors[index % colors.length],
             borderWidth: 2
         });
@@ -336,18 +343,22 @@ function initBubbleChart() {
                 legend: {
                     display: true,
                     labels: {
-                        font: { size: 11 },
-                        color: '#2c2c2c',
+                        font: { size: 12, weight: 'bold' },
+                        color: '#e6edf3',
                         padding: 10
                     }
                 },
                 tooltip: {
-                    backgroundColor: 'rgba(26, 26, 26, 0.9)',
+                    backgroundColor: 'rgba(13, 17, 23, 0.95)',
+                    borderColor: '#d4a574',
+                    borderWidth: 1,
                     padding: 12,
+                    titleColor: '#d4a574',
+                    bodyColor: '#e6edf3',
                     callbacks: {
                         label: function(context) {
                             const city = context.raw;
-                            return `Pris: ${city.x} kr. | Score: ${city.y.toFixed(1)} | Size: ${context.dataset.label}`;
+                            return `Pris: ${city.x} kr. | Score: ${city.y.toFixed(1)}`;
                         }
                     }
                 }
@@ -357,15 +368,15 @@ function initBubbleChart() {
                     title: {
                         display: true,
                         text: 'Pris (kr.)',
-                        color: '#2c2c2c',
-                        font: { size: 12, weight: 'bold' }
+                        color: '#ffffff',
+                        font: { size: 13, weight: 'bold' }
                     },
                     ticks: {
-                        color: '#ffffff', // CHANGED TO WHITE
-                        font: { size: 11 }
+                        color: '#e6edf3', // Bright text
+                        font: { size: 12, weight: 'bold' }
                     },
                     grid: {
-                        color: 'rgba(224, 224, 224, 0.3)',
+                        color: 'rgba(212, 165, 116, 0.15)',
                         drawBorder: false
                     }
                 },
@@ -373,15 +384,15 @@ function initBubbleChart() {
                     title: {
                         display: true,
                         text: 'Score',
-                        color: '#2c2c2c',
-                        font: { size: 12, weight: 'bold' }
+                        color: '#ffffff',
+                        font: { size: 13, weight: 'bold' }
                     },
                     ticks: {
-                        color: '#ffffff', // CHANGED TO WHITE
-                        font: { size: 11 }
+                        color: '#e6edf3', // Bright text
+                        font: { size: 12, weight: 'bold' }
                     },
                     grid: {
-                        color: 'rgba(224, 224, 224, 0.3)',
+                        color: 'rgba(212, 165, 116, 0.15)',
                         drawBorder: false
                     }
                 }
@@ -457,8 +468,6 @@ function enableScrollAnimations() {
 // Recalculate charts on window resize
 // ========================================
 window.addEventListener('resize', () => {
-    // Charts auto-resize with Chart.js
-    // but we could add custom logic here if needed
     if (citiesChart) citiesChart.resize();
     if (categoryChart) categoryChart.resize();
     if (priceChart) priceChart.resize();
@@ -470,15 +479,14 @@ window.addEventListener('resize', () => {
 // Affordance signals through interactivity
 // ========================================
 document.addEventListener('DOMContentLoaded', () => {
-    // Add hover affordance to bakery cards
     const cards = document.querySelectorAll('.bakery-card');
     cards.forEach(card => {
         card.addEventListener('mouseenter', function() {
-            this.style.boxShadow = '0 12px 40px rgba(212, 165, 116, 0.3)';
+            this.style.boxShadow = '0 12px 40px rgba(212, 165, 116, 0.35)';
         });
         
         card.addEventListener('mouseleave', function() {
-            this.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.05)';
+            this.style.boxShadow = '0 4px 15px rgba(0, 0, 0, 0.3)';
         });
     });
 });
@@ -500,7 +508,7 @@ function getTopBakery() {
     return chartData.bakeries[0];
 }
 
-console.log('✓ Pivot charts and visualizations initialized');
-console.log('✓ All preattentive attributes implemented');
-console.log('✓ Affordance signals enabled');
-console.log('✓ City labels updated to WHITE/HVID');
+console.log('✓ Dark Mode activated');
+console.log('✓ All text colors optimized for readability');
+console.log('✓ Pivot charts initialized with high contrast');
+console.log('✓ Preattentive attributes implemented');
