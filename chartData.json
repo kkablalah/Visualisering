@@ -1,0 +1,283 @@
+{
+  "cities": [
+    {
+      "By": "Silkeborg",
+      "Score": 5.6,
+      "Pris": 35.0,
+      "Antal": 1
+    },
+    {
+      "By": "Berlin",
+      "Score": 5.4,
+      "Pris": 28.0,
+      "Antal": 1
+    },
+    {
+      "By": "Aarhus",
+      "Score": 5.2,
+      "Pris": 29.0,
+      "Antal": 3
+    },
+    {
+      "By": "Christianshavn",
+      "Score": 5.1,
+      "Pris": 38.0,
+      "Antal": 1
+    },
+    {
+      "By": "Sjællands Odde",
+      "Score": 5.0,
+      "Pris": 30.0,
+      "Antal": 1
+    },
+    {
+      "By": "Nordvest",
+      "Score": 4.95,
+      "Pris": 33.25,
+      "Antal": 4
+    },
+    {
+      "By": "Sydhavn",
+      "Score": 4.75,
+      "Pris": 30.0,
+      "Antal": 2
+    },
+    {
+      "By": "Amager",
+      "Score": 4.71,
+      "Pris": 36.86,
+      "Antal": 7
+    },
+    {
+      "By": "Oaxaca",
+      "Score": 4.7,
+      "Pris": 26.0,
+      "Antal": 1
+    },
+    {
+      "By": "Vesterbro",
+      "Score": 4.6,
+      "Pris": 36.79,
+      "Antal": 7
+    },
+    {
+      "By": "Esbjerg",
+      "Score": 4.5,
+      "Pris": 35.0,
+      "Antal": 1
+    },
+    {
+      "By": "Nørrebro",
+      "Score": 4.49,
+      "Pris": 34.39,
+      "Antal": 20
+    },
+    {
+      "By": "Århus",
+      "Score": 4.4,
+      "Pris": 26.5,
+      "Antal": 2
+    },
+    {
+      "By": "Østerbro",
+      "Score": 4.39,
+      "Pris": 35.79,
+      "Antal": 14
+    },
+    {
+      "By": "Indre by",
+      "Score": 4.36,
+      "Pris": 44.75,
+      "Antal": 12
+    },
+    {
+      "By": "Viborg",
+      "Score": 4.2,
+      "Pris": 70.0,
+      "Antal": 2
+    },
+    {
+      "By": "Valby",
+      "Score": 4.1,
+      "Pris": 27.5,
+      "Antal": 2
+    },
+    {
+      "By": "Reffen",
+      "Score": 4.1,
+      "Pris": 25.0,
+      "Antal": 1
+    },
+    {
+      "By": "Frederiksberg",
+      "Score": 4.08,
+      "Pris": 28.2,
+      "Antal": 6
+    },
+    {
+      "By": "Charlottenlund",
+      "Score": 4.05,
+      "Pris": 34.0,
+      "Antal": 2
+    },
+    {
+      "By": "Odense",
+      "Score": 3.9,
+      "Pris": 42.0,
+      "Antal": 1
+    },
+    {
+      "By": "Lyngby",
+      "Score": 3.8,
+      "Pris": 35.0,
+      "Antal": 1
+    },
+    {
+      "By": "Paris",
+      "Score": 3.5,
+      "Pris": 38.0,
+      "Antal": 1
+    },
+    {
+      "By": "Rom",
+      "Score": 3.5,
+      "Pris": 37.0,
+      "Antal": 1
+    },
+    {
+      "By": "Nuuk",
+      "Score": 2.8,
+      "Pris": 15.0,
+      "Antal": 1
+    },
+    {
+      "By": "Faaborg",
+      "Score": 2.5,
+      "Pris": 26.5,
+      "Antal": 1
+    },
+    {
+      "By": "Bali",
+      "Score": 2.4,
+      "Pris": 24.0,
+      "Antal": 1
+    },
+    {
+      "By": "Slagelse",
+      "Score": 2.0,
+      "Pris": 65.0,
+      "Antal": 1
+    },
+    {
+      "By": "Kastrup",
+      "Score": 1.9,
+      "Pris": 44.0,
+      "Antal": 2
+    },
+    {
+      "By": "Dunkerque",
+      "Score": 1.1,
+      "Pris": 24.0,
+      "Antal": 1
+    }
+  ],
+  "bakeries": [
+    {
+      "name": "Juno",
+      "city": "Østerbro",
+      "score": 5.8,
+      "price": 35.0,
+      "cheese": "Comté"
+    },
+    {
+      "name": "Berta",
+      "city": "Aarhus",
+      "score": 5.8,
+      "price": 30.0,
+      "cheese": "Ukendt"
+    },
+    {
+      "name": "Sneezing Fruits",
+      "city": "Amager",
+      "score": 5.6,
+      "price": 44.0,
+      "cheese": "Vesterhavsost"
+    },
+    {
+      "name": "Brandt Brød",
+      "city": "Silkeborg",
+      "score": 5.6,
+      "price": 35.0,
+      "cheese": "Gudenåenost"
+    },
+    {
+      "name": "Dallas Coffee",
+      "city": "Østerbro",
+      "score": 5.6,
+      "price": 39.0,
+      "cheese": "Ukendt"
+    },
+    {
+      "name": "Jumbo Bakery",
+      "city": "Aarhus",
+      "score": 5.5,
+      "price": 32.0,
+      "cheese": "Gammel knas fra Arla Unika"
+    },
+    {
+      "name": "Skruens",
+      "city": "Nordvest",
+      "score": 5.5,
+      "price": 30.0,
+      "cheese": "Vesterhavsost"
+    },
+    {
+      "name": "Il Buco",
+      "city": "Amager",
+      "score": 5.4,
+      "price": 36.0,
+      "cheese": "Rød krystal fra Them"
+    },
+    {
+      "name": "Batting",
+      "city": "Charlottenlund",
+      "score": 5.4,
+      "price": 33.0,
+      "cheese": "Ukendt fra Thise"
+    },
+    {
+      "name": "David Bread Head",
+      "city": "Århus",
+      "score": 5.4,
+      "price": 32.0,
+      "cheese": "Gammel knas fra Arla Unika"
+    },
+    {
+      "name": "Depanneur",
+      "city": "Nørrebro",
+      "score": 5.4,
+      "price": 35.0,
+      "cheese": "Smørost"
+    },
+    {
+      "name": "Prolog",
+      "city": "Østerbro",
+      "score": 5.4,
+      "price": 42.0,
+      "cheese": "Vesterhavost fra Thise"
+    }
+  ],
+  "categories": {
+    "Bolle": 4.38,
+    "Smør": 4.4,
+    "Ost": 4.52,
+    "Kaffe": 4.5,
+    "Sødt": 4.43
+  },
+  "priceStats": {
+    "min": 15.0,
+    "max": 95.0,
+    "mean": 35.6,
+    "median": 35.0
+  }
+}

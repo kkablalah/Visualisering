@@ -1,0 +1,139 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boller med Ost — Danmarks Bedste</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Chart.js library for pivot charts and visualizations -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.js"></script>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Boller med Ost</h1>
+            <p class="subtitle">Opdagelsesrejsen til Danmarks bedste bageri</p>
+        </div>
+    </section>
+
+    <!-- Stats Overview -->
+    <section class="stats">
+        <div class="container">
+            <div class="stat-grid">
+                <div class="stat-card">
+                    <span class="stat-number">5.8</span>
+                    <span class="stat-label">Højeste Score</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">35</span>
+                    <span class="stat-label">Bagerier Testet</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">15</span>
+                    <span class="stat-label">Forskellige Byer</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Top Cities Bar Chart -->
+    <section class="top-cities">
+        <div class="container">
+            <h2>Bedste Byer for Boller med Ost</h2>
+            <div class="chart-wrapper">
+                <canvas id="citiesChart"></canvas>
+            </div>
+        </div>
+    </section>
+
+    <!-- Category Radar Chart -->
+    <section class="categories">
+        <div class="container">
+            <h2>Kvalitets Komponenter</h2>
+            <p class="section-description">Gennemsnitlige karakterer for hver dimension af den perfekte bolle med ost</p>
+            <div class="chart-wrapper radar-wrapper">
+                <canvas id="categoryChart"></canvas>
+            </div>
+        </div>
+    </section>
+
+    <!-- Price Distribution Chart -->
+    <section class="price-analysis">
+        <div class="container">
+            <h2>Pris Analyse</h2>
+            <div class="price-stats-grid">
+                <div class="price-stat">
+                    <span class="price-label">Laveste Pris</span>
+                    <span class="price-value" id="minPrice">-</span>
+                </div>
+                <div class="price-stat">
+                    <span class="price-label">Højeste Pris</span>
+                    <span class="price-value" id="maxPrice">-</span>
+                </div>
+                <div class="price-stat">
+                    <span class="price-label">Gennemsnit</span>
+                    <span class="price-value" id="meanPrice">-</span>
+                </div>
+                <div class="price-stat">
+                    <span class="price-label">Median</span>
+                    <span class="price-value" id="medianPrice">-</span>
+                </div>
+            </div>
+            <div class="chart-wrapper">
+                <canvas id="priceChart"></canvas>
+            </div>
+        </div>
+    </section>
+
+    <!-- Top Bakeries Grid -->
+    <section class="top-bakeries">
+        <div class="container">
+            <h2>Top 12 Bagerier</h2>
+            <div class="bakery-grid" id="bakery-list"></div>
+        </div>
+    </section>
+
+    <!-- Score Comparison Bubble Chart -->
+    <section class="score-comparison">
+        <div class="container">
+            <h2>Score vs. Pris Sammenligning</h2>
+            <p class="section-description">Hver boble repræsenterer en bageri — større boble = flere steder i samme by</p>
+            <div class="chart-wrapper bubble-wrapper">
+                <canvas id="bubbleChart"></canvas>
+            </div>
+        </div>
+    </section>
+
+    <!-- Design Principles -->
+    <section class="design-explanation">
+        <div class="container">
+            <h2>Designprincipper</h2>
+            <div class="principle-grid">
+                <div class="principle-card">
+                    <h3>Kontrast</h3>
+                    <p>Store talværdier og klare farveseparationer sikrer øjeblikkelig læsbarhed og visuelt hierarki. Farvegradienter i chartene skaber naturlig fokus.</p>
+                </div>
+                <div class="principle-card">
+                    <h3>Preattentive Attributes</h3>
+                    <p>Størrelse, farve og position i visualiseringerne gør det muligt at aflæse patterns på under 500ms uden bevidst læsning.</p>
+                </div>
+                <div class="principle-card">
+                    <h3>Affordance & Signifier</h3>
+                    <p>Interaktive elementer har tydelige hover-effekter. Grafer signalerer data-responsivitet gennem smoothe animationer.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>© 2025 Boller med Ost Datavisualisering</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
