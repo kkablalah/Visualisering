@@ -48,17 +48,19 @@
   </section>
 
   <!-- Pivot Table Section -->
-  <section class="pivot-table-section">
-    <div class="container">
-      <h2>Pivottabel: BMO Score på Østerbro</h2>
-      <select id="pivotControl" class="form-control">
-        <option value="score_sum">Sum af BMO Score</option>
-        <option value="score_avg">Gennemsnit af BMO Score</option>
-        <option value="score_max">Maks BMO Score</option>
-        <option value="price_sum">Sum af BMO Pris</option>
-        <option value="price_avg">Gennemsnit af BMO Pris</option>
-        <option value="price_max">Maks BMO Pris</option>
-      </select>
+<section class="pivot-table-section">
+  <div class="container">
+    <h2>Pivottabel: BMO Score & Pris</h2>
+    <select id="pivotControl" class="form-control">
+      <option value="score_sum">Sum af BMO Score</option>
+      <option value="score_avg">Gennemsnit af BMO Score</option>
+      <option value="score_max">Maks BMO Score</option>
+      <option value="price_sum">Sum af BMO Pris</option>
+      <option value="price_avg">Gennemsnit af BMO Pris</option>
+      <option value="price_max">Maks BMO Pris</option>
+    </select>
+    <button id="togglePivotTable" class="btn btn--outline" style="margin:16px 0;">Vis/Skjul tabel</button>
+    <div id="pivotTableWrap">
       <table class="pivot-table">
         <thead>
           <tr>
@@ -68,12 +70,12 @@
         </thead>
         <tbody id="pivotBody"></tbody>
       </table>
-      <div class="chart-wrapper" style="margin-top:32px;">
-        <canvas id="pivotChart" height="300"></canvas>
-      </div>
     </div>
-  </section>
-
+    <div class="chart-wrapper super-chart" style="margin-top:32px;">
+      <canvas id="pivotChart" height="500"></canvas>
+    </div>
+  </div>
+</section>
   <!-- Price Distribution Chart -->
   <section class="price-analysis">
     <div class="container">
@@ -102,14 +104,13 @@
     </div>
   </section>
 
-  <!-- Top Bakeries Grid -->
-  <section class="top-bakeries">
-    <div class="container">
-      <h2>Top 12 Bagerier</h2>
-      <div class="bakery-grid" id="bakery-list"></div>
-    </div>
-  </section>
-
+  <!-- Top 10 Bakeries Grid -->
+<section class="top-bakeries">
+  <div class="container">
+    <h2>Top 10 Bagerier</h2>
+    <div class="bakery-grid bakery-grid--top10" id="bakery-list"></div>
+  </div>
+</section>
   <!-- Score Comparison Bubble Chart -->
   <section class="score-comparison">
     <div class="container">
