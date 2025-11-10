@@ -7,12 +7,6 @@
       "Antal": 1
     },
     {
-      "By": "Berlin",
-      "Score": 5.4,
-      "Pris": 28.0,
-      "Antal": 1
-    },
-    {
       "By": "Aarhus",
       "Score": 5.2,
       "Pris": 29.0,
@@ -47,12 +41,6 @@
       "Score": 4.71,
       "Pris": 36.86,
       "Antal": 7
-    },
-    {
-      "By": "Oaxaca",
-      "Score": 4.7,
-      "Pris": 26.0,
-      "Antal": 1
     },
     {
       "By": "Vesterbro",
@@ -133,33 +121,9 @@
       "Antal": 1
     },
     {
-      "By": "Paris",
-      "Score": 3.5,
-      "Pris": 38.0,
-      "Antal": 1
-    },
-    {
-      "By": "Rom",
-      "Score": 3.5,
-      "Pris": 37.0,
-      "Antal": 1
-    },
-    {
-      "By": "Nuuk",
-      "Score": 2.8,
-      "Pris": 15.0,
-      "Antal": 1
-    },
-    {
       "By": "Faaborg",
       "Score": 2.5,
       "Pris": 26.5,
-      "Antal": 1
-    },
-    {
-      "By": "Bali",
-      "Score": 2.4,
-      "Pris": 24.0,
       "Antal": 1
     },
     {
@@ -173,12 +137,6 @@
       "Score": 1.9,
       "Pris": 44.0,
       "Antal": 2
-    },
-    {
-      "By": "Dunkerque",
-      "Score": 1.1,
-      "Pris": 24.0,
-      "Antal": 1
     }
   ],
   "bakeries": [
@@ -195,13 +153,6 @@
       "score": 5.8,
       "price": 30.0,
       "cheese": "Ukendt"
-    },
-    {
-      "name": "Sneezing Fruits",
-      "city": "Amager",
-      "score": 5.6,
-      "price": 44.0,
-      "cheese": "Vesterhavsost"
     },
     {
       "name": "Brandt Brød",
