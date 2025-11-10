@@ -1,8 +1,3 @@
-// ==============================
-// DARK MODE - HIGH CONTRAST CHARTS
-// With Chart.js, Danish dataset only
-// ==============================
-
 let citiesChart, priceChart, bubbleChart;
 let chartData = {};
 
@@ -28,9 +23,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
 });
 
-// ==============================
-// PRICE STATISTICS DISPLAY
-// ==============================
+// ---- PRICE STATISTICS ----
 function updatePriceStats() {
     const stats = chartData.priceStats;
     document.getElementById('minPrice').textContent = `${stats.min} kr.`;
@@ -39,9 +32,7 @@ function updatePriceStats() {
     document.getElementById('medianPrice').textContent = `${stats.median} kr.`;
 }
 
-// ==============================
-// CHART 1: CITIES BAR CHART
-// ==============================
+// ---- BAR CHART (CITIES) ----
 function initCitiesBarChart() {
     const ctx = document.getElementById('citiesChart').getContext('2d');
     const labels = chartData.cities.map(c => c.By);
@@ -79,11 +70,7 @@ function initCitiesBarChart() {
             plugins: {
                 legend: {
                     display: true,
-                    labels: {
-                        font: { size: 13, family: 'Helvetica Neue', weight: 'bold' },
-                        color: '#ffffff',
-                        padding: 20
-                    }
+                    labels: { font: {size:13, family:'Helvetica Neue', weight:'bold'}, color:'#ffffff', padding:20 }
                 },
                 tooltip: {
                     backgroundColor: 'rgba(13, 17, 23, 0.95)',
@@ -103,30 +90,16 @@ function initCitiesBarChart() {
                 y: {
                     beginAtZero: true,
                     max: 6,
-                    ticks: {
-                        color: '#e6edf3',
-                        font: { size: 12, weight: 'bold' }
-                    },
-                    grid: {
-                        color: 'rgba(212, 165, 116, 0.15)',
-                        drawBorder: false
-                    }
+                    ticks: { color: '#e6edf3', font: { size: 12, weight: 'bold' } },
+                    grid: { color: 'rgba(212, 165, 116, 0.15)', drawBorder: false }
                 },
-                x: {
-                    ticks: {
-                        color: '#e6edf3',
-                        font: { size: 12, weight: 'bold' }
-                    },
-                    grid: { display: false }
-                }
+                x: { ticks: { color: '#e6edf3', font: { size: 12, weight: 'bold' } }, grid: { display: false } }
             }
         }
     });
 }
 
-// ==============================
-// CHART 3: PRICE DISTRIBUTION LINE CHART
-// ==============================
+// ---- LINE CHART (PRICE DISTRIBUTION) ----
 function initPriceDistributionChart() {
     const ctx = document.getElementById('priceChart').getContext('2d');
     const labels = chartData.cities.map(c => c.By);
@@ -165,10 +138,7 @@ function initPriceDistributionChart() {
             plugins: {
                 legend: {
                     display: true,
-                    labels: {
-                        font: { size: 13, weight: 'bold' },
-                        color: '#ffffff'
-                    }
+                    labels: { font: {size:13, weight:'bold'}, color:'#ffffff' }
                 },
                 tooltip: {
                     backgroundColor: 'rgba(13, 17, 23, 0.95)',
@@ -183,43 +153,25 @@ function initPriceDistributionChart() {
                 }
             },
             scales: {
-                y: {
-                    beginAtZero: true,
-                    ticks: {
-                        color: '#e6edf3',
-                        font: { size: 12, weight: 'bold' }
-                    },
-                    grid: {
-                        color: 'rgba(212, 165, 116, 0.15)',
-                        drawBorder: false
-                    }
-                },
-                x: {
-                    ticks: {
-                        color: '#e6edf3',
-                        font: { size: 12, weight: 'bold' }
-                    },
-                    grid: { display: false }
-                }
+                y: { beginAtZero: true, ticks: {color:'#e6edf3', font:{size:12, weight:'bold'}}, grid: {color:'rgba(212, 165, 116, 0.15)', drawBorder:false} },
+                x: { ticks: {color:'#e6edf3', font:{size:12, weight:'bold'}}, grid: {display:false} }
             }
         }
     });
 }
 
-// ==============================
-// CHART 4: BUBBLE CHART - Score vs Price
-// ==============================
+// ---- BUBBLE CHART ----
 function initBubbleChart() {
     const ctx = document.getElementById('bubbleChart').getContext('2d');
     const bubbleDatasets = [];
-    const colors = ['#d4a574','#c9915c','#9d7c5c','#6c6c6c','#e74c3c','#f39c12','#3498db','#2ecc71'];
+    const colors = ['#d4a574', '#c9915c', '#9d7c5c', '#6c6c6c', '#e74c3c', '#f39c12', '#3498db', '#2ecc71'];
 
     chartData.cities.forEach((city, idx) => {
         bubbleDatasets.push({
             label: city.By,
-            data: [{ x: city.Pris, y: city.Score, r: Math.sqrt(city.Antal) * 8 }],
-            backgroundColor: colors[idx % colors.length] + 'b3',
-            borderColor: colors[idx % colors.length],
+            data: [{ x: city.Pris, y: city.Score, r: Math.sqrt(city.Antal)*8 }],
+            backgroundColor: colors[idx%colors.length]+'b3',
+            borderColor: colors[idx%colors.length],
             borderWidth: 2
         });
     });
@@ -233,11 +185,7 @@ function initBubbleChart() {
             plugins: {
                 legend: {
                     display: true,
-                    labels: {
-                        font: { size: 12, weight: 'bold' },
-                        color: '#e6edf3',
-                        padding: 10
-                    }
+                    labels: { font:{size:12, weight:'bold'}, color:'#e6edf3', padding:10 }
                 },
                 tooltip: {
                     backgroundColor: 'rgba(13, 17, 23, 0.95)',
@@ -256,62 +204,54 @@ function initBubbleChart() {
             },
             scales: {
                 x: {
-                    title: {
-                        display: true,
-                        text: 'Pris (kr.)',
-                        color: '#ffffff',
-                        font: { size: 13, weight: 'bold' }
-                    },
-                    ticks: {
-                        color: '#e6edf3',
-                        font: { size: 12, weight: 'bold' }
-                    },
-                    grid: {
-                        color: 'rgba(212, 165, 116, 0.15)',
-                        drawBorder: false
-                    }
+                    title: { display:true, text:'Pris (kr.)', color:'#ffffff', font:{size:13, weight:'bold'} },
+                    ticks: { color:'#e6edf3', font:{size:12, weight:'bold'} },
+                    grid:{color:'rgba(212, 165, 116, 0.15)', drawBorder:false}
                 },
                 y: {
-                    title: {
-                        display: true,
-                        text: 'Score',
-                        color: '#ffffff',
-                        font: { size: 13, weight: 'bold' }
-                    },
-                    ticks: {
-                        color: '#e6edf3',
-                        font: { size: 12, weight: 'bold' }
-                    },
-                    grid: {
-                        color: 'rgba(212, 165, 116, 0.15)',
-                        drawBorder: false
-                    }
+                    title: { display:true, text:'Score', color:'#ffffff', font:{size:13, weight:'bold'} },
+                    ticks: { color:'#e6edf3', font:{size:12, weight:'bold'} },
+                    grid:{color:'rgba(212, 165, 116, 0.15)', drawBorder:false}
                 }
             }
         }
     });
 }
 
-// ==============================
-// PIVOTTABLE
-// ==============================
-function renderPivotTable(mode = 'score') {
+// ---- PIVOT TABLE ----
+function renderPivotTable(mode = 'score_sum') {
     const pivotBody = document.getElementById('pivotBody');
     const pivotLabel = document.getElementById('pivotLabel');
-    let labelText = mode === 'score' ? 'Sum BMO Score' : 'Sum BMO Price';
-    pivotLabel.textContent = labelText;
+    let labelTextMap = {
+        score_sum: 'Sum af BMO Score',
+        score_avg: 'Gennemsnit af BMO Score',
+        score_max: 'Maks BMO Score',
+        price_sum: 'Sum af BMO Pris',
+        price_avg: 'Gennemsnit af BMO Pris',
+        price_max: 'Maks BMO Pris'
+    };
+    pivotLabel.textContent = labelTextMap[mode] || 'Sum af BMO Score';
 
     let rows = '';
     chartData.cities.forEach(city => {
-        let value = mode === 'score' ? city.Score : city.Pris;
+        let value;
+        if (mode.startsWith('score')) {
+            if (mode === 'score_sum') value = city.Score;
+            if (mode === 'score_avg') value = city.Score; // For per city, avg == score (unless multiple entries per city)
+            if (mode === 'score_max') value = city.Score;
+        }
+        if (mode.startsWith('price')) {
+            if (mode === 'price_sum') value = city.Pris;
+            if (mode === 'price_avg') value = city.Pris;
+            if (mode === 'price_max') value = city.Pris;
+        }
         rows += `<tr><td>${city.By}</td><td>${value}</td></tr>`;
     });
     pivotBody.innerHTML = rows;
 }
 
-// ==============================
-// BAKERY GRID RENDERING
-// ==============================
+
+// ---- BAKERY CARDS ----
 function renderBakeryGrid() {
     const bakeryContainer = document.getElementById('bakery-list');
     bakeryContainer.innerHTML = '';
@@ -340,9 +280,7 @@ function renderBakeryGrid() {
     });
 }
 
-// ==============================
-// SCROLL ANIMATIONS
-// ==============================
+// ---- SCROLL ANIMATIONS ----
 function enableScrollAnimations() {
     const observerOptions = {
         threshold: 0.1,
@@ -365,6 +303,7 @@ function enableScrollAnimations() {
         observer.observe(section);
     });
 }
+
 
 window.addEventListener('resize', () => {
     if (citiesChart) citiesChart.resize();
