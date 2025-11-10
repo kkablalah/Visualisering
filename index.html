@@ -47,16 +47,24 @@
         </div>
     </section>
 
-    <!-- Category Radar Chart -->
-    <section class="categories">
-        <div class="container">
-            <h2>Kvalitets Komponenter</h2>
-            <p class="section-description">Gennemsnitlige karakterer for hver dimension af den perfekte bolle med ost</p>
-            <div class="chart-wrapper radar-wrapper">
-                <canvas id="categoryChart"></canvas>
-            </div>
-        </div>
-    </section>
+<section class="pivot-table-section">
+  <div class="container">
+    <h2>Pivottabel: BMO Score & Pris</h2>
+    <select id="pivotControl" class="form-control">
+      <option value="score">Sum BMO Score</option>
+      <option value="price">Sum BMO Price</option>
+    </select>
+    <table class="pivot-table">
+      <thead>
+        <tr>
+          <th>By</th>
+          <th id="pivotLabel">Sum BMO Score</th>
+        </tr>
+      </thead>
+      <tbody id="pivotBody"></tbody>
+    </table>
+  </div>
+</section>
 
     <!-- Price Distribution Chart -->
     <section class="price-analysis">
