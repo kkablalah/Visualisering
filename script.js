@@ -364,33 +364,6 @@ function renderPivotChart(labels, data, label) {
 }
 
 // ---- BAKERY CARDS ----
-function renderBakeryGrid() {
-    const bakeryContainer = document.getElementById('bakery-list');
-    bakeryContainer.innerHTML = '';
-    chartData.bakeries.forEach((bakery, idx) => {
-        const bakeryCard = document.createElement('div');
-        bakeryCard.className = 'bakery-card';
-        bakeryCard.style.animationDelay = `${idx * 50}ms`;
-
-        bakeryCard.innerHTML = `
-            <div class="bakery-rank">#${idx + 1}</div>
-            <div class="bakery-name">${bakery.name}</div>
-            <div class="bakery-location">${bakery.city}</div>
-            <div class="bakery-score">${bakery.score}</div>
-            <div class="bakery-details">
-                <div class="detail">
-                    <span class="label">Pris:</span>
-                    <span class="value">${bakery.price.toFixed(1)} kr.</span>
-                </div>
-                <div class="detail">
-                    <span class="label">Ost:</span>
-                    <span class="value">${bakery.cheese}</span>
-                </div>
-            </div>
-        `;
-        bakeryContainer.appendChild(bakeryCard);
-    });
-}
 
 // ---- SCROLL ANIMATIONS ----
 function enableScrollAnimations() {
